@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XmMovies.KnownForPage"
+             x:Name="KnownForPageName">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lblConocido" Text="Conocido por" TextColor="Orange" FontSize="30" />
+            <ListView HorizontalOptions="Center" VerticalOptions="FillAndExpand"
+                  BindingContext="{Binding Source={x:Reference KnownForPageName} }"
+                  ItemsSource="{Binding Path=Items}"
+                  IsRefreshing="{Binding IsBusy}"
+                  x:Name="lvItems">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell ImageSource="{Binding poster_path}" Text="{Binding title}"></ImageCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

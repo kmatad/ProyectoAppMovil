@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XmMovies.DetailContent"
+             x:Name="DetailedView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lblTitulo" Text="pelicula" FontSize="40" TextColor="Orange"></Label>
+            <Image x:Name="imgImagen" />
+            <Label x:Name="lblx0" Text="Reseña" FontSize="20" TextColor="Orange"></Label>
+            <StackLayout>
+                <ScrollView>
+                    <Label x:Name="lblInfo" Text="info"></Label>
+                </ScrollView>
+            </StackLayout>
+            <Button x:Name="btnKnownFor" Text="Conocido por" IsVisible="False" Clicked="btnKnownFor_Clicked"></Button>
+            <Label x:Name="lblx1" Text="Popularidad:" FontSize="20" TextColor="Orange"></Label>
+            <Label x:Name="lblPop" Text=""></Label>
+            <Label x:Name="lblx2" Text="Promedio de votos:" FontSize="20" TextColor="Orange"></Label>
+            <Label x:Name="lblVote" Text=""></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

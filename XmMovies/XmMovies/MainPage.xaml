@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XmMovies"
+             x:Class="XmMovies.MainPage"
+             x:Name="Root">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+    
+        <Label Text="Buscador" FontSize="30" HorizontalTextAlignment="Center" TextColor="Orange"></Label>
+        <Entry Placeholder="Nombre de la película" Text="{Binding busqueda}" x:Name="tbBusqueda"/>
+        <Button Text="Buscar" Clicked="Button_Clicked" x:Name="hhh"></Button>
+                
+        <ListView HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                  BindingContext="{Binding Source={x:Reference Root} }"
+                  ItemsSource="{Binding Path=Items}"
+                  IsRefreshing="{Binding IsBusy}"
+                  IsPullToRefreshEnabled="true"
+                  RefreshCommand="{Binding ObtenerComando}"
+                  ItemSelected="ListView_ItemSelected"
+                  x:Name="lvItems">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Margin="5" Text="{Binding nombreLista}" />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
